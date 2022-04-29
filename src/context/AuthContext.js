@@ -19,6 +19,13 @@ export const AuthProvider=({children}) =>{
         let data = await response.json()
         console.log('data:',data)
         console.log('response:',response)
+        if (response.status==200){
+            setauthTokens(data)
+            setUser(data.access)
+
+        }else{
+            alert('Something went wrong!')
+        }
 
     }
 
